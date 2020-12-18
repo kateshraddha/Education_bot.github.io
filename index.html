@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Chat Window </title>
+
+</head>
+
+<body>
+     <section>
+        <h1>Chat PopUp</h1> 
+        <p>Click on the that button to start chatting </p>
+           <div class="chat-btn">
+           <button style="font-size:24px" class="btn1" onclick="chatBot()"> <i class="material-icons">question_answer</i></button>
+           </div>
+</section>
+
+<!--Dialogflow code-->
+    <div class="chatBoxDiv">
+<iframe
+id="showChatBox"
+style="display:none;"
+allow="microphone;"
+width="350"
+height="450"
+    src="https://console.dialogflow.com/api-client/demo/embedded/4d0e2e01-8f63-40e5-a93e-4c11a6c6c0ed">
+</iframe>
+
+    </div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var isopen
+    $(document).ready(function(){
+    isopen=false 
+    })
+    function chatBot(){  
+      console.log("in chat boat ",isopen)
+        if(isopen){
+    $("#showChatBox").hide();
+    isopen=false    
+        }else{
+    $("#showChatBox").show();
+   isopen=true    
+        }
+  };  
+</script>
+</html>
